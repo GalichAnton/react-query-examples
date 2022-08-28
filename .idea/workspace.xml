@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38a9fe17-9aac-4119-94c2-eb58fda92902" name="Changes" comment="reworked to typescript">
-      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Home.page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/RQSuperHeroes.page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SuperHeroes.page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/superHero.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+    <list default="true" id="38a9fe17-9aac-4119-94c2-eb58fda92902" name="Changes" comment="setup linters, add styles, traditional fetching data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RQSuperHeroes.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RQSuperHeroes.page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +70,7 @@
       <workItem from="1661670402332" duration="1228000" />
       <workItem from="1661671691129" duration="179000" />
       <workItem from="1661671888791" duration="107000" />
-      <workItem from="1661672039899" duration="1912000" />
+      <workItem from="1661672039899" duration="8650000" />
     </task>
     <task id="LOCAL-00001" summary="reworked to typescript">
       <created>1661672288491</created>
@@ -84,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661672288491</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="setup linters, add styles, traditional fetching data">
+      <created>1661674523513</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661674523513</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,7 +105,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="reworked to typescript" />
-    <option name="LAST_COMMIT_MESSAGE" value="reworked to typescript" />
+    <MESSAGE value="setup linters, add styles, traditional fetching data" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup linters, add styles, traditional fetching data" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
