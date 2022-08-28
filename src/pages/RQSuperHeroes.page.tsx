@@ -1,39 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-import axios from "axios";
-import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 
+import { useAddHero } from "../hooks/useAddHero";
+import { useSuperHeroData } from "../hooks/useSuperHeroData";
 import { SuperHero } from "../types/superHero";
 
-const fetchSuperHeroes = async () => {
-  const res = await axios.get<SuperHero[]>("http://localhost:4000/superheroes");
-  return res.data;
-};
-
 const RqSuperHeroesPage = () => {
+  const [name, setName] = useState("");
+  const [alterEgo, setAlterEgo] = useState("");
+  const { mutate: addHero } = useAddHero();
   const onSuccess = (result: SuperHero[]) =>
     console.log("Successfully fetched Super Heroes", result);
 
   const onError = (error: Error) =>
     console.log("Error fetching Super Heroes", error);
 
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery<
-    SuperHero[]
-  >("superheroes", fetchSuperHeroes, {
-    enabled: false,
-    onError: (err) => onError(err as Error),
-    onSuccess: (d) => onSuccess(d),
-    // select: (items): string[] => {
-    //   return items.map((hero) => hero.name);
-    // },
-    // staleTime: 10000,
-    // refetchOnMount: true,
-    // cacheTime: 10000,
-    // refetchOnWindowFocus: true,
-    // refetchInterval: 5000,
-  });
+  const { isLoading, data, isError, error, isFetching, refetch } =
+    useSuperHeroData({ onSuccess, onError });
 
-  console.log({ isLoading, isFetching });
+  console.log(data);
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
@@ -42,12 +28,34 @@ const RqSuperHeroesPage = () => {
     return <h2>Error: {error.message}</h2>;
   }
 
+  const handleAddHeroClick = () => {
+    const hero = { name, alterEgo, id: Date.now() };
+    addHero(hero);
+  };
+
   return (
     <>
       <h2>RQ Super Heroes Page</h2>
+      <div>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          value={alterEgo}
+          onChange={(e) => setAlterEgo(e.target.value)}
+        />
+        <button onClick={handleAddHeroClick}>Add Hero</button>
+      </div>
       <button onClick={() => refetch()}>Fetch</button>
       {data?.map((hero) => {
-        return <div key={hero.name}>{hero.name}</div>;
+        return (
+          <div key={hero.id}>
+            <Link to={`/rq-super-hero/${hero.id}`}>{hero.name}</Link>
+          </div>
+        );
       })}
     </>
   );

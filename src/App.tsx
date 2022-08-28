@@ -5,7 +5,9 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
+import DependentQueryPage from "./pages/DependentQuery.page";
 import HomePage from "./pages/Home.page";
+import RqSuperHeroPage from "./pages/RQSuperHero.page";
 import RqSuperHeroesPage from "./pages/RQSuperHeroes.page";
 import SuperHeroesPage from "./pages/SuperHeroes.page";
 
@@ -27,12 +29,23 @@ function App() {
               <li>
                 <Link to="/rq-super-heroes">RQ Super Heroes</Link>
               </li>
+              <li>
+                <Link to="/dependent-queries">DependentQuery</Link>
+              </li>
             </ul>
           </nav>
           <main>
             <Routes>
               <Route path="/super-heroes" element={<SuperHeroesPage />} />
               <Route path="/rq-super-heroes" element={<RqSuperHeroesPage />} />
+              <Route
+                path="/dependent-queries"
+                element={<DependentQueryPage email={"vishwas@example.com"} />}
+              />
+              <Route
+                path="/rq-super-hero/:heroId"
+                element={<RqSuperHeroPage />}
+              />
               <Route path="/" element={<HomePage />} />
             </Routes>
           </main>
